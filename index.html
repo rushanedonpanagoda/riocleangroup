@@ -28,29 +28,31 @@
       color: #0a3d62;
     }
     nav a {
-      margin-left: 25px;
+      margin-left: 15px;
       text-decoration: none;
       color: #333;
       font-weight: 500;
+      display:inline-block;
     }
     .btn {
       background: #0a3d62;
       color: white;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
+      display:inline-block;
     }
     .hero {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952');
       background-size: cover;
       background-position: center;
       color: white;
-      padding: 120px 20px;
+      padding: 80px 15px;
       text-align: center;
     }
     .hero h2 {
-      font-size: 42px;
+      font-size: 28px;
       margin-bottom: 15px;
     }
     .hero p {
@@ -96,6 +98,29 @@
       text-align: center;
       padding: 20px;
     }
+  
+    @media(max-width:768px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+      }
+      nav{
+        display:flex;
+        flex-wrap:wrap;
+        gap:10px;
+      }
+      .hero{
+        padding:60px 15px;
+      }
+      .hero h2{
+        font-size:24px;
+      }
+      .price-row{
+        flex-direction:column;
+        gap:5px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -109,7 +134,7 @@
     <a href="#services">Services</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a href="tel:0421799458" class="btn">Call Now</a>
+    <a href="tel:+61421799458" class="btn">Call Now</a>
   </nav>
 </header>
 
@@ -234,15 +259,47 @@
     <h2>Get Your Free Quote Today</h2>
     <p>Call us now to discuss your cleaning needs.</p>
     <h3>0421 799 458</h3>
-    <a href="tel:0421799458" class="btn">Call Now</a>
+    <a href="tel:+61421799458" class="btn">Call Now</a>
   </div>
 </section>
 
-<section class="section" style="text-align:center;">
+<section class="section" style="text-align:center; overflow:hidden;">
   <h2>What Our Clients Say</h2>
-  <p style="font-size:22px; color:#f5b50a;">★★★★★</p>
-  <p>"Reliable, professional, and always spotless. Highly recommend RIO Australia!"</p>
+  <div style="height:200px; overflow:hidden; position:relative;">
+    <div id="reviews" style="position:absolute; width:100%; animation:scrollReviews 20s linear infinite;">
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Outstanding service every time. Highly professional." – James R.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Our office has never looked better. Reliable team." – Sarah M.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Attention to detail is unmatched. Highly recommend." – Daniel K.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Very dependable and easy to work with." – Priya S.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Exceptional cleaning standards every visit." – Michael T.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Professional, punctual, and thorough." – Olivia B.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"Great communication and top-quality results." – Ethan W.</p>
+
+      <p style="color:#f5b50a;">★★★★★</p>
+      <p>"We trust them with all our cleaning needs." – Chloe D.</p>
+    </div>
+  </div>
 </section>
+
+<style>
+@keyframes scrollReviews {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+</style>
 
 <footer>
   <p>© 2026 RIO Australia. All rights reserved.</p>
@@ -294,6 +351,5 @@ function sendQuote(){
 
 </body>
 </html>
-
 
 
