@@ -127,7 +127,7 @@
 
 <header>
   <div style="display:flex; align-items:center; gap:15px;">
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAoAAAAHgCAYAAAC8zF2kAAAACXBIWXMAAAsTAAALEwEAmpwYAA..." alt="RIO Australia Logo" style="height:40px; max-width:100%; object-fit:contain;">
+    <img src="https://i.imgur.com/placeholder.png" alt="RIO Australia Logo" style="height:45px; max-width:100%; object-fit:contain;">
     <h1 style="margin:0;">RIO Australia</h1>
   </div>
   <nav>
@@ -213,27 +213,27 @@
     </div>
 
     <div class="price-row" style="display:flex; justify-content:space-between; padding:20px; cursor:pointer; border-bottom:1px solid #eee;">
-      <span>1 visit / week<br><small>Basic maintenance cleaning</small></span>
+      <span>1 visit / week<br><small>Basic maintenance cleaning</small><br><button class="btn" style="margin-top:8px;">Get Quote</button></span>
       <span style="color:#0a3d62; font-weight:600;">$850 / month</span>
     </div>
 
     <div class="price-row" style="display:flex; justify-content:space-between; padding:20px; cursor:pointer; border-bottom:1px solid #eee;">
-      <span>2 visits / week<br><small>Consistent upkeep for busy spaces</small></span>
+      <span>2 visits / week<br><small>Consistent upkeep for busy spaces</small><br><button class="btn" style="margin-top:8px;">Get Quote</button></span>
       <span style="color:#0a3d62; font-weight:600;">$1,350 / month</span>
     </div>
 
     <div class="price-row" style="display:flex; justify-content:space-between; padding:20px; cursor:pointer; border-bottom:1px solid #eee;">
-      <span>3 visits / week<br><small>Ideal for high-traffic offices</small></span>
+      <span>3 visits / week<br><small>Ideal for high-traffic offices</small><br><button class="btn" style="margin-top:8px;">Get Quote</button></span>
       <span style="color:#0a3d62; font-weight:600;">$1,850 / month</span>
     </div>
 
     <div class="price-row" style="display:flex; justify-content:space-between; padding:20px; cursor:pointer; border-bottom:1px solid #eee; background:#f0f6ff;">
-      <span>4 visits / week <span style="background:#0a3d62; color:white; padding:4px 8px; border-radius:20px; font-size:12px; margin-left:10px;">MOST POPULAR</span><br><small>Premium daily-level cleanliness</small></span>
+      <span>4 visits / week <span style="background:#0a3d62; color:white; padding:4px 8px; border-radius:20px; font-size:12px; margin-left:10px;">MOST POPULAR</span><br><small>Premium daily-level cleanliness</small><br><button class="btn" style="margin-top:8px;">Get Quote</button></span>
       <span style="color:#0a3d62; font-weight:600;">$2,250 / month</span>
     </div>
 
     <div class="price-row" style="display:flex; justify-content:space-between; padding:20px; cursor:pointer; background:#f0f6ff;">
-      <span>5 visits / week <span style="background:#0a3d62; color:white; padding:4px 8px; border-radius:20px; font-size:12px; margin-left:10px;">MOST POPULAR</span><br><small>Full-service daily cleaning solution</small></span>
+      <span>5 visits / week <span style="background:#0a3d62; color:white; padding:4px 8px; border-radius:20px; font-size:12px; margin-left:10px;">MOST POPULAR</span><br><small>Full-service daily cleaning solution</small><br><button class="btn" style="margin-top:8px;">Get Quote</button></span>
       <span style="color:#0a3d62; font-weight:600;">$2,550 / month</span>
     </div>
   </div>
@@ -329,7 +329,11 @@ function closeModal(){
 
 // attach modal to pricing rows
 Array.from(document.getElementsByClassName('price-row')).forEach(el=>{
-  el.onclick = openModal;
+  el.onclick = function(){
+    var plan = this.innerText;
+    document.getElementById('details').value = plan;
+    openModal();
+  };
 });
 
 function sendQuote(){
@@ -351,5 +355,6 @@ function sendQuote(){
 
 </body>
 </html>
+
 
 
